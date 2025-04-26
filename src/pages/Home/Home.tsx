@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../components/Logo/Logo";
 import {
@@ -33,6 +33,20 @@ function Home() {
   const [livros, setLivros] = useState<Livro[]>(
     ResponseLivros().data.lstLivros
   );
+  const [loggedInEmail, setLoggedInEmail] = useState<string | null>(null);
+  const [userRole, setUserRole] = useState<string | null>(null);
+
+  useEffect(() => {
+    const email = localStorage.getItem("loggedInEmail");
+    const role = localStorage.getItem("registeredRole");
+
+    if (email) {
+      setLoggedInEmail(email);
+    }
+    if (role) {
+      setUserRole(role);
+    }
+  }, []);
 
   const toggleFavorito = (id: number) => {
     setLivros(
@@ -42,18 +56,29 @@ function Home() {
     );
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("loggedInEmail");
+    localStorage.removeItem("registeredRole");
+    setLoggedInEmail(null);
+    setUserRole(null);
+  };
+
   return (
     <HomeContainer>
       <ContainerHeader>
         <Logo />
-        <Link to="/login" style={{ textDecoration: "none" }}>
+        <Link
+          to="/login"
+          style={{ textDecoration: "none" }}
+          onClick={handleLogout}
+        >
           <ButtonLogout>Sair</ButtonLogout>
         </Link>
       </ContainerHeader>
 
       <WelcomeSection>
-        <UserName>Olá, Teste Capys</UserName>
-        <UserRole>Desenvolvedor Front-End</UserRole>
+        <UserName>Olá, {loggedInEmail || "Usuário"}</UserName>
+        <UserRole>{userRole || "Desenvolvedor Front-End"}</UserRole>{" "}
       </WelcomeSection>
 
       <HomeLivrosContainer>

@@ -1,0 +1,37 @@
+import React, { useState, useEffect } from 'react';
+import { MdCheckCircle, MdError, MdClose } from 'react-icons/md';
+import { ToastWrapper, ProgressBar, IconWrapper, CloseButton } from './StyledToastContainerStyled';
+
+export interface ToastType {
+  message: string;
+  type: 'success' | 'error';
+  visible: boolean;
+  duration?: number;
+  onClose: () => void;
+}
+
+const StyledToastContainer: React.FC<ToastType> = ({ message, type, visible, duration = 3000, onClose }) => {
+  const [remainingTime, setRemainingTime] = useState(duration);
+
+  useEffect(() => {
+    if (visible) {
+      setRemainingTime(duration);
+    }
+  }, [visible, duration]);
+
+
+  return (
+    <ToastWrapper type={type} visible={visible}>
+      <IconWrapper type={type}>
+        {type === 'success' ? <MdCheckCircle size={24} /> : <MdError size={24} />}
+      </IconWrapper>
+      <span>{message}</span>
+      <CloseButton onClick={onClose}>
+        <MdClose size={20} />
+      </CloseButton>
+      <ProgressBar type={type} duration={duration} />
+    </ToastWrapper>
+  );
+};
+
+export { StyledToastContainer };
