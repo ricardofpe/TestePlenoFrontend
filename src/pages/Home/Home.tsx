@@ -1,5 +1,7 @@
+import ButtonPrimary from "../../components/Button/ButtonPrimary";
+
 export default function Home() {
   return (
-    <div>Home</div>
+    <div><ButtonPrimary/></div>
   )
 }
