@@ -10,10 +10,13 @@ padding-left: 22px;
 align-items: center;
 justify-content: center;
 display: flex;
-font-size: 12px;
+font-size: 12.83px;
+line-height: 21.17px;
 font-weight: 500;
 border-radius: 4px;
 min-width: 110px;
+cursor: pointer;
+width: 100%;
 
 
 &:hover{

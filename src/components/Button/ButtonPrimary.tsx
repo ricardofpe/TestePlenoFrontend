@@ -1,7 +1,12 @@
 import { StyledButton } from "./ButtonPrimaryStyled";
 
-export default function ButtonPrimary() {
+interface ButtonProps {
+  children: React.ReactNode;
+}
+
+
+export default function ButtonPrimary({ children } : ButtonProps) {
   return (
-    <StyledButton>Button</StyledButton>
+    <StyledButton>{children}</StyledButton>
   )
 }

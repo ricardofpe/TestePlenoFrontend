@@ -3,14 +3,15 @@ import { InputContainer, InputStyled, LabelStyled } from "./InputStyled";
 interface InputProps {
   placeholder?: string;
   label?: string;
+  type?: string;
 }
 
 
-export default function Input({ placeholder, label }: InputProps) {
+export default function Input({ placeholder, label ,type = "text"}: InputProps) {
   return (
     <InputContainer>
       {label && <LabelStyled>{label}</LabelStyled>}
-      <InputStyled placeholder={placeholder} />
+      <InputStyled type={type} placeholder={placeholder} />
     </InputContainer>
   );
 }

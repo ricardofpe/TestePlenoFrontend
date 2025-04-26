@@ -1,8 +1,11 @@
 import { StyledButton } from "./ButtonDisabledStyled";
 
+interface ButtonProps {
+    children: React.ReactNode;
+  }
 
-export default function ButtonDisabled() {
+export default function ButtonDisabled({ children } : ButtonProps) {
   return (
-    <StyledButton>Button</StyledButton>
+    <StyledButton>{children}</StyledButton>
   )
 }
