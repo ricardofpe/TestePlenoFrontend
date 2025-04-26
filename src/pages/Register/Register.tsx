@@ -89,7 +89,7 @@ function Register() {
   return (
     <>
       <RegisterPageContainer>
-        <ContainerHeader>
+      <ContainerHeader>
           <Logo />
           <Link style={{ textDecoration: "none" }} to="/login">
             <ButtonBack>Voltar</ButtonBack>

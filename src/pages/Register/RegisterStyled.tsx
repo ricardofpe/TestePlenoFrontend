@@ -18,13 +18,24 @@ export const RegisterForm = styled.div`
   flex-direction: column;
   gap: 10px;
   margin-bottom: 50px;
+
+  @media (min-width: 768px) {
+    width: 370px;
+  }
 `;
 
 export const Title = styled.h2`
   text-align: center;
   margin-bottom: 8px;
   color: #fff;
-  font-size: 14px;
+  font-size: 14.39px;
+  font-weight: 700;
+  line-height: 22.39px;
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+    line-height: 28px;
+  }
 `;
 
 export const Span = styled.span`
@@ -33,6 +44,12 @@ export const Span = styled.span`
   font-weight: 400;
   text-align: center;
   margin-bottom: 16px;
+  line-height: 17.59px;
+
+  @media (min-width: 768px) {
+    font-size: 12px;
+    line-height: 22px;
+  }
 `;
 
 export const ButtonContainer = styled.div`
@@ -61,6 +78,12 @@ export const SelectStyled = styled.select`
   background-position: right 10px top 50%;
   background-size: 10px;
   padding-right: 30px;
+
+  @media (min-width: 768px) {
+    height: 48px;
+    padding-left: 16.24px;
+    padding-right: 16.24px;
+  }
 `;
 
 export const LabelStyled = styled.label`
@@ -82,6 +105,7 @@ export const ButtonBack = styled.button`
   color: #F8F9FA;
   cursor: pointer;
   min-width: 79.54px;
+  margin: 0px 30px;
 `
 
 export const ContainerHeader = styled.div`
@@ -90,5 +114,10 @@ justify-content: space-between;
 align-items: center;
 width: 100%;
 padding: 0px 20px;
+width: 390px;
 margin-bottom: 5px;
+
+@media (min-width: 768px) {
+    width: 464px;
+  }
 `

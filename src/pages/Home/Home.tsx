@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../components/Logo/Logo";
 import {
   ButtonLogout,
@@ -35,10 +35,16 @@ function Home() {
   );
   const [loggedInEmail, setLoggedInEmail] = useState<string | null>(null);
   const [userRole, setUserRole] = useState<string | null>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const email = localStorage.getItem("loggedInEmail");
     const role = localStorage.getItem("registeredRole");
+
+    if (!email) {
+      navigate("/login");
+      return;
+    }
 
     if (email) {
       setLoggedInEmail(email);
@@ -46,7 +52,7 @@ function Home() {
     if (role) {
       setUserRole(role);
     }
-  }, []);
+  }, [navigate]);
 
   const toggleFavorito = (id: number) => {
     setLivros(
@@ -62,6 +68,10 @@ function Home() {
     setLoggedInEmail(null);
     setUserRole(null);
   };
+
+  if (!loggedInEmail) {
+    return null;
+  }
 
   return (
     <HomeContainer>

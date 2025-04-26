@@ -13,7 +13,13 @@ export const ContainerHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 20px;
+  padding: 0px 20px;
+
+  @media (min-width: 768px) {
+    background-color: #01121F;
+    border-bottom: 1px solid #021a30;
+    padding: 0px 150px;
+  }
 `;
 
 export const WelcomeSection = styled.div`
@@ -21,7 +27,21 @@ export const WelcomeSection = styled.div`
   background-color: #01121F;
   padding: 16px 0;
   margin-bottom: 20px;
-  height: 131px;
+  height: 100%;
+  min-height:131px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding-left: 25px;
+
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 16px 150px;
+  }
 `;
 
 export const UserName = styled.h2`
@@ -67,6 +87,7 @@ export const ButtonLogout = styled.button`
   font-size: 12px;
   line-height: 28.42px;
   cursor: pointer;
+  margin-right: 30px;
 `;
 
 export const HomeLivrosContainer = styled.div`
@@ -76,6 +97,7 @@ export const HomeLivrosContainer = styled.div`
   width: 100%;
   max-width: 1200px;
   gap: 20px;
+  padding: 20px;
 `;
 
 export const LivroCard = styled.div`

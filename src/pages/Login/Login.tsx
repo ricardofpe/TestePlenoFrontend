@@ -2,7 +2,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import ButtonPrimary from "../../components/Button/ButtonPrimary";
 import ButtonDisabled from "../../components/ButtonDisabled/ButtonDisabled";
 import Input from "../../components/Input/Input";
-import Logo from "../../components/Logo/Logo";
+
 import {
   ButtonContainer,
   LoginForm,
@@ -16,6 +16,8 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ResponseLogin } from "../../Mocks/login";
 import { StyledToastContainer, ToastType } from "../../components/StyledToastContainer/StyledToastContainer";
+import Logo from "../../components/Logo/Logo";
+
 
 
 interface ILogin {
@@ -102,7 +104,7 @@ function Login() {
   return (
     <>
       <LoginPageContainer>
-        <Logo />
+        <Logo isLoginPage={true} />
         <LoginForm>
           <Title>Login</Title>
           <Input
