@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import { MdCheckCircle, MdError, MdClose } from 'react-icons/md';
 import { ToastWrapper, ProgressBar, IconWrapper, CloseButton } from './StyledToastContainerStyled';
 
@@ -11,13 +10,6 @@ export interface ToastType {
 }
 
 const StyledToastContainer: React.FC<ToastType> = ({ message, type, visible, duration = 3000, onClose }) => {
-  const [remainingTime, setRemainingTime] = useState(duration);
-
-  useEffect(() => {
-    if (visible) {
-      setRemainingTime(duration);
-    }
-  }, [visible, duration]);
 
 
   return (

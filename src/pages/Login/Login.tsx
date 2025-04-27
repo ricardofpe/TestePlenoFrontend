@@ -19,12 +19,6 @@ import { StyledToastContainer, ToastType } from "../../components/StyledToastCon
 import Logo from "../../components/Logo/Logo";
 
 
-
-interface ILogin {
-  Email: string;
-  Senha: string;
-}
-
 function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
