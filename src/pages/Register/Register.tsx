@@ -14,7 +14,6 @@ import {
   ButtonBack,
   ContainerHeader,
 } from "./RegisterStyled";
-import "react-toastify/dist/ReactToastify.css";
 import { StyledToastContainer, ToastType } from "../../components/StyledToastContainer/StyledToastContainer";
 
 function Register() {
