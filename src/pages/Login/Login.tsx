@@ -125,7 +125,7 @@ function Login() {
           </PasswordInputWrapper>
 
           <ButtonContainer>
-            <ButtonPrimary onClick={handleLogin}>Login</ButtonPrimary>
+            <ButtonPrimary onClick={handleLogin}>Entrar</ButtonPrimary>
             <Span>Ainda não possui uma conta?</Span>
 
             <Link style={{ textDecoration: "none" }} to="/register">
